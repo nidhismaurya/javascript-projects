@@ -53,3 +53,4 @@ if ((astronautCount <= 7) && (astronautStatus) && (totalMassKg < maximumMassLimi
 } else {
     console.log("ABORT MISSION!");
 }
+
