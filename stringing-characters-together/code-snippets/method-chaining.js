@@ -9,3 +9,4 @@ console.log(word.toUpperCase());
 
 
 //Experiment with other combinations (chains) of string methods.
+console.log(word.slice(4).toUpperCase())
