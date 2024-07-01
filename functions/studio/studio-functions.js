@@ -48,8 +48,17 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 let emptyArray = [];
 
 function reverseArray (array) {
-
+    let result = [];
+    for (let i = array.length-1; i >= 0; i--) {
+        result.push(reverseCharacters(array[i]))    
+    }
+       return result; 
 }
+console.log(reverseArray(arrayTest1));
+console.log(reverseArray(arrayTest2));
+console.log(reverseArray(arrayTest3));
+
+
 
 // Bonus Missions
 
@@ -57,11 +66,24 @@ function reverseArray (array) {
 // 2. Retrieve only the last character from strings with lengths of 3 or less.
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
+function funPhrase(str) {
+    let substring;
+    if(str.length <= 3) {
+        substring = str[str.length - 1];
+    } else {
+        substring = str.slice(0, 3);
+    }
+    return `We put '${substring}' in '${str}'.`
+}
 
 // Test Function
 
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
+let funStr = "Functions Rock !";
+let shortFunStr = "Hello";
+console.log(funPhrase(funStr));
+console.log(funPhrase(shortFunStr));
 
 // Area of rectangle equal to length x width
 
@@ -70,3 +92,7 @@ function reverseArray (array) {
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+function areaOfRectangle(length, width = length) {
+    return length * width;
+}
+console.log(`"The area is ${areaOfRectangle(4)}cm^2"`);
